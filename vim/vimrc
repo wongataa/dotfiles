@@ -1,0 +1,36 @@
+call pathogen#infect()
+call pathogen#helptags()
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" Enable line numbers.
+set number
+
+" Enable invisible characters.
+set list
+
+" More natural splitting.
+set splitbelow
+set splitright
+
+" Set a default indent, but vim-sleuth should adjust it.
+set tabstop=4
+
+" Enable mouse. Great for resizing windows and keeping co-workers sane.
+set mouse=a
+
+" Disable swap files.
+set noswapfile
+
+" Close NERDTREE if it's the only window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Map NERDTreeFind to a keypress
+map <C-n> :NERDTree<CR>
+map <C-b> :NERDTreeFind<CR>
